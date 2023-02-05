@@ -1,0 +1,148 @@
+body{
+    font-family: Helvetica, sans-serif;
+    color: #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 0.9em;
+    line-height: 25px;
+    color: #a5a5a5;
+}
+
+header{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+header > div{
+    min-height: 30em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    padding-bottom: 15vh;
+    transition: 0.3s ease-in-out;
+}
+
+header video{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    z-index: -1;
+}
+
+header > div::before{
+    content: '';
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header .text{
+    position: relative;
+}
+
+.sub-heading b{
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+.title{
+    margin: 0.2em 0 0.7em 0;
+}
+
+.sub-heading{
+    position: relative;
+}
+
+.sub-heading::before{
+    content: '';
+    background: #ffba52;
+    position: absolute;
+    top: -2em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3em;
+    height: 4px;
+}
+
+.article-link{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin: 5em 0 1em 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.article-link::before{
+    content: '';
+    background: #fff;
+    position: absolute;
+    width: 1px;
+    height: 3em;
+    top: -4em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.article-link:hover{
+    color: #ccc;
+}
+
+header > div:hover{
+    padding-bottom: 10em;
+}
+
+header > div:hover .article-link{
+    opacity: 1;
+}
+
+header > div:nth-child(1):hover::before{
+    background: linear-gradient(0deg, rgba(20, 99, 142, 0.8), rgba(255, 187, 42,0));
+}
+header > div:nth-child(2):hover::before{
+    background: linear-gradient(0deg, rgba(30, 133, 18, 0.8), rgba(255, 187, 42,0));
+}
+header > div:nth-child(3):hover::before{
+    background: linear-gradient(0deg, rgba(194, 137, 31, 0.8), rgba(255, 187, 42,0));
+}
+
+header>div:hover p{
+    color: #fff;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 900px) {
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header{
+        grid-template-columns: 1fr;
+    }
+}
